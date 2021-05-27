@@ -1,0 +1,6 @@
+C:\Users\leo_n\source\LP4EL-Exercicios\aula01\Exercicio05\bin\Debug\Exercicio05.exe.config
+C:\Users\leo_n\source\LP4EL-Exercicios\aula01\Exercicio05\bin\Debug\Exercicio05.exe
+C:\Users\leo_n\source\LP4EL-Exercicios\aula01\Exercicio05\bin\Debug\Exercicio05.pdb
+C:\Users\leo_n\source\LP4EL-Exercicios\aula01\Exercicio05\obj\Debug\Exercicio05.csproj.CoreCompileInputs.cache
+C:\Users\leo_n\source\LP4EL-Exercicios\aula01\Exercicio05\obj\Debug\Exercicio05.exe
+C:\Users\leo_n\source\LP4EL-Exercicios\aula01\Exercicio05\obj\Debug\Exercicio05.pdb
