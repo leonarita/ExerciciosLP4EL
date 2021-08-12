@@ -1,0 +1,33 @@
+﻿@model IEnumerable<aula06.Models.Departamento>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Listagem de departamentos</h2>
+
+<p>
+    @Html.ActionLink("Criar novo departamento", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Departamento
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descricao)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.IdDepartamento }) |
+            @Html.ActionLink("Detalhar", "Details", new { id=item.IdDepartamento }) |
+            @Html.ActionLink("Apagar", "Delete", new { id=item.IdDepartamento })
+        </td>
+    </tr>
+}
+
+</table>

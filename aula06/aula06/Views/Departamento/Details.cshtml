@@ -1,0 +1,26 @@
+﻿@model aula06.Models.Departamento
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalhamento do departamnto</h2>
+
+<div>
+    <h4>Departamento</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Departamento
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.IdDepartamento }) |
+    @Html.ActionLink("Voltar", "Index")
+</p>

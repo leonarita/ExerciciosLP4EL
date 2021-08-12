@@ -1,0 +1,33 @@
+﻿@model aula06.Models.Departamento
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Apagar departamento</h2>
+
+<h3>Tem certeza que deseja deletar o departamento?</h3>
+<div>
+    <h4>Departamento</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Departamento
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar", "Index")
+        </div>
+    }
+</div>
