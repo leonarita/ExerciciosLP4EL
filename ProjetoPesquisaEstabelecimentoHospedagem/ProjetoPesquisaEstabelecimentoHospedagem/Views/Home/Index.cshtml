@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+}
+
+<h2>Home</h2>
+
+@*
+    @Html.ActionLink("Cidade", "Index", "Cidade")
+    @Html.ActionLink("Categoria", "Index", "Categoria")
+    @Html.ActionLink("Estabelecimento", "Index", "Estabelecimento")
+    @Html.ActionLink("Quarto", "Index", "Quarto")
+    @Html.ActionLink("TipoQuarto", "Index", "TipoQuarto")
+*@
+
+@Html.ExibeFrasePublicitaria()
+@Html.ExibeImagens()
+
+
+<h3>Encontre seu estabelecimento aqui!</h3>
+
+<div class="row">
+    <form class="form-inline">
+        <div class="form-group">
+            <label>Cidade</label>   &nbsp; &nbsp;
+            @Html.DropDownList("Cidade")
+        </div>
+
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+        <div class="form-group">
+            <label>Categoria</label>   &nbsp; &nbsp;
+            @Html.DropDownList("Categoria")
+        </div>
+
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+        <button type="button" id="pesquisar" class="btn btn-success" style="margin-top:16px">Pesquisar</button>
+        <br /><br />
+    </form>
+</div>
+
+<div class="row">
+    <div id="resultados"></div>
+</div>
+
+@section Scripts {
+
+    <script>
+        $(function () {
+            $("#pesquisar").on("click", function () {
+                var pesquisa = { IdCategoria: $("#Categoria").val(), IdCidade: $("#Cidade").val() };
+                $.getJSON("/home/pesquisar", pesquisa, function (data) {
+                    var resultados = $("#resultados");
+                    resultados.empty();
+                    if (data.length == 0) {
+                        resultados.append('<div class="alert alert-warning">Não encontramos nenhum estabelecimento... </div>');
+                        return false;
+                    }
+                    for (var i = 0; i<data.length; i++) {
+                        if (data[i].DisqueEntrega == true)
+                            data[i].DisqueEntrega = "Sim";
+                        else
+                            data[i].DisqueEntrega = "Não";
+                        resultados.append('<div class="alert alert-success">' +
+                            '<h4><b>' + data[i].NomeComercial + '</b></h4>' +
+                            '<p><b>Razão Social: </b>' + data[i].RazaoSocial + '</p>' +
+                            '<p><b>Telefone: </b>' + data[i].Telefone + '</p>' +
+                            '<p><b>Site: </b>' + data[i].Site + '</p>' +
+                            '<p><b>Endereço: </b>' + data[i].Endereco + '</p>' +
+                            '</div>');
+                    }
+                })
+            })
+        })
+    </script>
+}
+

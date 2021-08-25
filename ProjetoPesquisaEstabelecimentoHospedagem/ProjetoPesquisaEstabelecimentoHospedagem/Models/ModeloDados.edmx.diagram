@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8a83b40a635c4086814c801b06a2ac07" Name="Diagram1">
+        <EntityTypeShape EntityType="PesquisaEstabelecimentoHospedagemDBModel.Categoria" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PesquisaEstabelecimentoHospedagemDBModel.Cidade" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PesquisaEstabelecimentoHospedagemDBModel.Estabelecimento" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="PesquisaEstabelecimentoHospedagemDBModel.Quarto" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PesquisaEstabelecimentoHospedagemDBModel.TipoQuarto" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <AssociationConnector Association="PesquisaEstabelecimentoHospedagemDBModel.FK__Estabelec__IdCat__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="PesquisaEstabelecimentoHospedagemDBModel.FK__Estabelec__IdCid__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="PesquisaEstabelecimentoHospedagemDBModel.FK__Quarto__IdEstabe__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="PesquisaEstabelecimentoHospedagemDBModel.FK__Quarto__IdTipoQu__5629CD9C" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

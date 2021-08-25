@@ -1,0 +1,48 @@
+use master;
+
+create database PesquisaEstabelecimentoHospedagemDB;
+
+USE PesquisaEstabelecimentoHospedagemDB;
+
+CREATE TABLE Categoria (
+	IdCategoria INT IDENTITY PRIMARY KEY, 
+	Descricao VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE Cidade (
+	IdCidade INT IDENTITY PRIMARY KEY,
+	Nome VARCHAR(80) NOT NULL,
+	UF VARCHAR(2) NOT NULL
+);
+
+CREATE TABLE Estabelecimento (
+	IdEstabelecimento INT IDENTITY PRIMARY KEY,
+	IdCategoria INT NOT NULL REFERENCES Categoria(IdCategoria),
+	IdCidade INT NOT NULL REFERENCES Cidade(IdCidade),
+	NomeComercial VARCHAR(100) NOT NULL,
+	RazaoSocial VARCHAR(14) NOT NULL,
+	Endereco VARCHAR(100) NOT NULL,
+	Telefone VARCHAR(11) NOT NULL,
+	Site VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE TipoQuarto (
+	IdTipoQuarto INT IDENTITY PRIMARY KEY,
+	Descricao VARCHAR(40) NOT NULL,
+	ValorDiaria DECIMAL NOT NULL,
+	CafeManha BIT NOT NULL
+);
+
+CREATE TABLE Quarto (
+	IdQuarto INT IDENTITY PRIMARY KEY,
+	IdEstabelecimento INT REFERENCES Estabelecimento(IdEstabelecimento),
+	IdTipoQuarto INT REFERENCES TipoQuarto(IdTipoQuarto),
+	NumeroQuarto INT NOT NULL,
+	Disponivel BIT NOT NULL,
+
+	UNIQUE(IdEstabelecimento, NumeroQuarto)
+);
+
+
+select * from Cidade;
+
